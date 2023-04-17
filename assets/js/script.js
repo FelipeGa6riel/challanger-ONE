@@ -1,10 +1,10 @@
 
 
+let text = document.querySelector("#cripto");
+let result = document.querySelector("#result");
 
-let criptografar = () => {
+const criptografar = () => {
 
-    let text = document.querySelector("#cripto");
-    let result = document.querySelector("#result");
     let local = text.value;
 
     let mudar = local.replace(/a|e|i|o|u/g, function (mudar) {
@@ -24,10 +24,8 @@ let criptografar = () => {
     return (result.innerHTML = `${mudar}`);
 };
 
-let descriptografar = () => {
+const descriptografar = () => {
 
-    let text = document.querySelector('#cripto');
-    let result = document.querySelector('#result');
     let local = text.value;
 
     let mudar = local.replace(/ai|enter|ober|imes|ufat/g, function(mudar){
