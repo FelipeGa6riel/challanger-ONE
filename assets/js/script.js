@@ -5,9 +5,11 @@ let result = document.querySelector("#result");
 
 const criptografar = () => {
 
-    let local = text.value;
+    let valor = text.value;
 
-    let mudar = local.replace(/a|e|i|o|u/g, function (mudar) {
+    if(!valor) return mostraImg()
+
+    let mudar = valor.replace(/a|e|i|o|u/g, function (mudar) {
         if (mudar === "a") {
             return "ai";
         } else if (mudar === "e") {
@@ -20,15 +22,15 @@ const criptografar = () => {
             return "ufat";
         }
     });
-    console.log(mudar)
+    limpaImg()
     return (result.innerHTML = `${mudar}`);
 };
 
 const descriptografar = () => {
 
-    let local = text.value;
+    let valor = text.value;
 
-    let mudar = local.replace(/ai|enter|ober|imes|ufat/g, function(mudar){
+    let mudar = valor.replace(/ai|enter|ober|imes|ufat/g, function(mudar){
 
         if(mudar === "ai"){
             return "a";
@@ -42,8 +44,21 @@ const descriptografar = () => {
             return "u";
         }
     })
-    console.log(mudar)
+    limpaImg()
     return (result.innerHTML = `${mudar}` );
 }
 
-// let cripto = criptografar;
+function limpaImg () {
+
+    document.querySelector('.img').style.visibility = 'hidden'
+    document.querySelector('.hide > h2').style.display ='none'
+    document.querySelector('.save').style.display ='none'
+}
+
+function mostraImg () {
+
+    document.querySelector('.img').style.visibility = 'visible'
+    document.querySelector('.hide > h2').style.display = 'block'
+    document.querySelector('.save').style.display = 'block'
+    result.innerText = ''
+}

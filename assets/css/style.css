@@ -24,17 +24,23 @@
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
-	align-items: center;
+	align-items: baseline;
 	text-align: center;
 	background: #FFFFFF;
 	box-shadow: 0px 24px 32px -8px rgba(0, 0, 0, 0.08);
 	border-radius: 32px;
 	padding: 32px ;
+	position: relative;
 }
 
-.nav > p, .nav > h2{
+#result {
+	position: absolute;
+	top: 16px;
+}
+
+.hide > p, .hide > h2{
 	padding-top: 16px;
-	width: 250px;
+	/* width: 250px; */
 }
 
 .container2 {
@@ -67,11 +73,19 @@
 	margin-top: 168px;
 	
 	
+	
+}
+
+.hide{
+	align-items: center;
+	text-align: center;
+	width: 100%;
 }
 
 .container2 > input::placeholder{
 	
 	color: #0A3871;
+
 	
 }
 
@@ -102,4 +116,54 @@
 #descriptografar{
 	background-color: #D8DFE8;
 	color: #0A3871;
+}
+
+
+@media (max-width: 1130px)
+{
+  .container{
+
+	gap: 64px;
+	align-items: center;
+	flex-direction: column 	;
+   }
+   .hide > img{
+
+	display: none;
+   }
+   #logo{
+	top: 44px;
+   }
+   .nav {
+	height: fit-content;
+	width: 100%;
+	align-items: center;
+   }
+   .hide > p, .hide > h2{
+	
+	width: fit-content;
+   }
+   .container2 > input {
+	align-self: flex-start;
+	width: auto;
+	font-size: 25px;
+   }
+}
+
+@media (max-width: 700px)
+{
+  .btn{
+	flex-direction: column;
+	gap: 12px;
+
+  }
+  .btn > button {
+	width: 100%;
+  }
+  .bnt-container {
+	width: auto;
+  }
+  .container {
+	gap: 32px;
+  }
 }
