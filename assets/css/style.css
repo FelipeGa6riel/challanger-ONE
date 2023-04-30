@@ -7,6 +7,7 @@
 }
 
 .container {
+
 	width: 100vw;
 	height: 100vh;
 	padding: 38px;
@@ -19,28 +20,21 @@
 }	
 
 .nav{
+
+	display: flex;
 	width: fit-content;
 	height: 100%;
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	align-items: baseline;
-	text-align: center;
+	text-align: left;
 	background: #FFFFFF;
 	box-shadow: 0px 24px 32px -8px rgba(0, 0, 0, 0.08);
 	border-radius: 32px;
 	padding: 32px ;
 	position: relative;
-}
-
-#result {
-	position: absolute;
-	top: 16px;
+	flex-direction:column ;
 }
 
 .hide > p, .hide > h2{
 	padding-top: 16px;
-	/* width: 250px; */
 }
 
 .container2 {
@@ -61,7 +55,8 @@
 
 }
 
-.container2 > input {
+.container2 > textarea {
+
 	border: none;
 	background-color: transparent;
 	font-style: normal;
@@ -70,45 +65,83 @@
 	line-height: 150%;
 	color: #0A3871;
 	outline: none;
-	margin-top: 168px;
-	
-	
-	
+	margin-top: 150px;
+	resize: none;
+	line-height: 1.3;
+}
+
+.result-container {
+
+	word-break: break-all;
 }
 
 .hide{
+
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: baseline;
 	align-items: center;
 	text-align: center;
 	width: 100%;
+	margin-top: 125px;
 }
 
-.container2 > input::placeholder{
-	
-	color: #0A3871;
+.container2 > textarea ::placeholder{
 
-	
+	text-align: center;
+	color: #0A3871;
+}
+
+#cripto ::-webkit-scrollbar-track {
+
+	background-color: #0A3871;
 }
 
 .bnt-container{
+
 	width:680px;
 }
 
 .btn{
+
 	display: flex ;
 	gap: 24px;
 
 }
 
 .btn > button {
+
 	width: 328px; 
-	padding: 24px 12px;              /*Da borda pra dentro*/
+	padding: 24px 12px;            
 	border-radius: 24px;
 	border: 1px solid #0A3871;
 	font-size: 16pt;
- 
+
+}
+
+#btn-copy {
+
+	height: 100%;
+	display: flex;
+	align-items: center;
+	flex-direction: column-reverse;
+}
+
+.copy {
+	margin-top: 35px;
+	width: 328px; 
+	padding: 24px 12px;            
+	border-radius: 24px;
+	border: 1px solid #0A3871;
+	font-size: 16pt;
+	background-color: #FFFFFF;
+	color:#0A3871;
+	display: none;
 }
 
 #criptografar{
+
 	background-color: #0A3871;
 	color: #FFFFFF;
 }
@@ -119,51 +152,89 @@
 }
 
 
-@media (max-width: 1130px)
-{
-  .container{
+@media (max-width: 1130px){
 
-	gap: 64px;
-	align-items: center;
-	flex-direction: column 	;
-   }
-   .hide > img{
+	.container{
 
-	display: none;
-   }
-   #logo{
-	top: 44px;
-   }
-   .nav {
-	height: fit-content;
-	width: 100%;
-	align-items: center;
-   }
-   .hide > p, .hide > h2{
+		gap: 64px;
+		align-items: center;
+		flex-direction: column 	;
+    }
+
+   	.hide > img{
+
+		display: none;
+    }
+   
+  	#logo{
+
+	  top: 44px;
+    }
+
+   	.nav {
+
+	  height: fit-content;
+	  width: 100%;
+	  align-items: center;
+  	}
+
+    .hide > p, .hide > h2{
 	
-	width: fit-content;
-   }
-   .container2 > input {
-	align-self: flex-start;
-	width: auto;
-	font-size: 25px;
-   }
+	  margin-top: -96px;
+	  width: fit-content;
+    }
+
+    .container2 > textarea {
+
+	  align-self: flex-start;
+	  width: 100%;
+	  font-size: 25px;
+	  margin-top: 450px;
+    }
+
+    .hide > p {
+		margin-top: 10px;
+	}
+
+    #btn-copy {
+
+	  width: 100%;
+	  height: 100%;
+	  display: flex;
+	  align-items: center;
+	  flex-direction: column-reverse;
+    }
+ 
+    .copy {
+	  width: 100%; 
+    }
 }
 
-@media (max-width: 700px)
-{
-  .btn{
-	flex-direction: column;
-	gap: 12px;
+@media (max-width: 700px){
 
-  }
-  .btn > button {
-	width: 100%;
-  }
-  .bnt-container {
-	width: auto;
-  }
-  .container {
-	gap: 32px;
-  }
+    .btn{
+
+	 flex-direction: column;
+	 gap: 12px;
+    }
+
+    .btn > button {
+
+	 width: 100%;
+    }
+
+    .bnt-container {
+
+	  width: auto;
+    }
+
+    .container {
+
+	  gap: 32px;
+    }
+
+    .result-container {
+	  width: 100%;
+	  align-self: flex-start;
+    }
 }

@@ -16,7 +16,8 @@
 
       <div class="container2">
 
-        <input type="text" placeholder="Digite seu texto" id="cripto">
+        <textarea name="text" id="cripto" cols="30" rows="10" placeholder="Digite seu texto"></textarea>
+        
 
         <div class="btn-container">
 
@@ -24,9 +25,9 @@
           
           <div class="btn">
 
-            <button id="criptografar" onclick="criptografar()">Criptografar</button>
+            <button id="criptografar" >Criptografar</button>
             
-            <button id="descriptografar" onclick="descriptografar()">Descriptografar</button>
+            <button id="descriptografar" >Descriptografar</button>
           </div>
         </div>
 
@@ -34,19 +35,26 @@
 
 
       <div class="nav">
-
-        <p id="result"></p>
+        
+        <span class="result-container"></span>
 
         <div class="hide">
           
           <img src="./assets/img/High quality products 1 1.svg" width="320" class="img" />
+
           <h2>Nenhuma mensagem encontrada</h2>
+
           <p class="save">Digite o texto que você deseja criptografar ou descriptografar.</p>
+
         </div>
-        
+
+        <div id="btn-copy">
+
+          <button class="copy">Copiar</button>
+        </div>
 
       </div>
     </div>
-    <script src="./assets/js/script.js"></script>
+    <script src="./assets/js/script.js" type="module"></script>
   </body>
 </html>

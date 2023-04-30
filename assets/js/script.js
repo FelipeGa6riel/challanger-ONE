@@ -1,64 +1,25 @@
-
+import {criptografar,descriptografar} from './criptografia.js'
+import copiar from './areaDeTransferencia.js';
 
 let text = document.querySelector("#cripto");
-let result = document.querySelector("#result");
+let result = document.querySelector(".result-container");
+let botaoCopiar = document.querySelector(".copy")
 
-const criptografar = () => {
+botaoCopiar.onclick= () => {
 
-    let valor = text.value;
+    copiar(result.innerText)
+}
 
-    if(!valor) return mostraImg()
-
-    let mudar = valor.replace(/a|e|i|o|u/g, function (mudar) {
-        if (mudar === "a") {
-            return "ai";
-        } else if (mudar === "e") {
-            return "enter";
-        } else if (mudar === "i") {
-            return "imes";
-        } else if (mudar === "o") {
-            return "ober";
-        } else if (mudar === "u") {
-            return "ufat";
-        }
-    });
-    limpaImg()
-    return (result.innerHTML = `${mudar}`);
+document.querySelector('#criptografar').onclick = () => {
+    
+    document.querySelector('.hide').style.marginTop = '0px'
+    
+    result.innerText = criptografar(text.value);
+    text.value = ""
 };
 
-const descriptografar = () => {
+document.querySelector('#descriptografar').onclick= () => {
 
-    let valor = text.value;
-
-    let mudar = valor.replace(/ai|enter|ober|imes|ufat/g, function(mudar){
-
-        if(mudar === "ai"){
-            return "a";
-        }else if(mudar === "enter") {
-            return "e";
-        }else if (mudar === "imes"){
-            return "i";
-        }else if(mudar === "ober") {
-            return "o";
-        }else if(mudar === "ufat") {
-            return "u";
-        }
-    })
-    limpaImg()
-    return (result.innerHTML = `${mudar}` );
-}
-
-function limpaImg () {
-
-    document.querySelector('.img').style.visibility = 'hidden'
-    document.querySelector('.hide > h2').style.display ='none'
-    document.querySelector('.save').style.display ='none'
-}
-
-function mostraImg () {
-
-    document.querySelector('.img').style.visibility = 'visible'
-    document.querySelector('.hide > h2').style.display = 'block'
-    document.querySelector('.save').style.display = 'block'
-    result.innerText = ''
+    result.innerText = descriptografar(text.value);
+    text.value = ""
 }
