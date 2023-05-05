@@ -6,7 +6,7 @@ let result = document.querySelector(".result-container");
 let botaoCopiar = document.querySelector(".copy");
 
 text.addEventListener("input", function(){
-    const value = this.value.toLowerCase().replace(/[áàâãä]/g,'a').replace(/[éèêë]/g, 'e').replace(/[íìîï]/g, 'i').replace(/[óòôõö]/g, 'o').replace(/[úùûü]/g, 'u').replace(/["'+= _`~!@#$%^&*()]/, '')
+    const value = this.value.toLowerCase().replace(/[áàâãä]/g,'a').replace(/[éèêë]/g, 'e').replace(/[íìîï]/g, 'i').replace(/[óòôõö]/g, 'o').replace(/[úùûü]/g, 'u').replace(/["'+= _\-`~!@#$%^&*()]/, '')
     this.value = value;
 })
 
