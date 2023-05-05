@@ -1,25 +1,30 @@
-import {criptografar,descriptografar} from './criptografia.js'
+import {criptografar,descriptografar} from './criptografia.js';
 import copiar from './areaDeTransferencia.js';
 
 let text = document.querySelector("#cripto");
 let result = document.querySelector(".result-container");
-let botaoCopiar = document.querySelector(".copy")
+let botaoCopiar = document.querySelector(".copy");
+
+text.addEventListener("input", function(){
+    const value = this.value.toLowerCase().replace(/[áàâãä]/g,'a').replace(/[éèêë]/g, 'e').replace(/[íìîï]/g, 'i').replace(/[óòôõö]/g, 'o').replace(/[úùûü]/g, 'u').replace(/["'+= _`~!@#$%^&*()]/, '')
+    this.value = value;
+})
 
 botaoCopiar.onclick= () => {
 
-    copiar(result.innerText)
+    copiar(result.innerText);
 }
 
 document.querySelector('#criptografar').onclick = () => {
     
-    document.querySelector('.hide').style.marginTop = '0px'
+    document.querySelector('.hide').style.marginTop = '0px';
     
     result.innerText = criptografar(text.value);
-    text.value = ""
+    text.value = "";
 };
 
 document.querySelector('#descriptografar').onclick= () => {
 
     result.innerText = descriptografar(text.value);
-    text.value = ""
+    text.value = "";
 }

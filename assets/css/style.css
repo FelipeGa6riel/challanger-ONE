@@ -237,4 +237,9 @@
 	  width: 100%;
 	  align-self: flex-start;
     }
+
+	.container2 > textarea {
+
+		margin-top: 300px;
+	}
 }
