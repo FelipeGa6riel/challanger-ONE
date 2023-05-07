@@ -6,7 +6,13 @@ let result = document.querySelector(".result-container");
 let botaoCopiar = document.querySelector(".copy");
 
 text.addEventListener("input", function(){
-    const value = this.value.toLowerCase().replace(/[áàâãä]/g,'a').replace(/[éèêë]/g, 'e').replace(/[íìîï]/g, 'i').replace(/[óòôõö]/g, 'o').replace(/[úùûü]/g, 'u').replace(/["'+= _`~!@#$%^&*()]/, '')
+    const value = this.value.toLowerCase()
+                            .replace(/[áàâãä]/g,'a')
+                            .replace(/[éèêë]/g, 'e')
+                            .replace(/[íìîï]/g, 'i')
+                            .replace(/[óòôõö]/g, 'o')
+                            .replace(/[úùûü]/g, 'u')
+                            .replace(/["'+=_\-`~!@#$%^&*()]/g, '');
     this.value = value;
 })
 
@@ -18,7 +24,7 @@ botaoCopiar.onclick= () => {
 document.querySelector('#criptografar').onclick = () => {
     
     document.querySelector('.hide').style.marginTop = '0px';
-    
+
     result.innerText = criptografar(text.value);
     text.value = "";
 };
