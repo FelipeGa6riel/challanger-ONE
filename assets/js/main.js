@@ -5,6 +5,8 @@ let text = document.querySelector("#cripto");
 let result = document.querySelector(".result-container");
 let botaoCopiar = document.querySelector(".copy");
 
+document.querySelector('#btn-copy').style.display = 'none'
+
 text.addEventListener("input", function(){
     const value = this.value.toLowerCase()
                             .replace(/[áàâãä]/g,'a')

@@ -53,6 +53,8 @@ function limpaImg () {
     document.querySelector('.img').style.display = 'none'
     document.querySelector('.hide > h2').style.display ='none'
     document.querySelector('.save').style.display ='none'
+    document.querySelector('#btn-copy').style.display = 'block'
+    document.querySelector('.nav').style.justifyContent = 'space-between'
 }
 
 // function mostraImg () {
