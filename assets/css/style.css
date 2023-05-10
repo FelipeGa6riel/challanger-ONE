@@ -130,7 +130,7 @@
 
 .copy {
 	margin-top: 35px;
-	width: 337px; 
+	width: 336px; 
 	padding: 24px 12px;            
 	border-radius: 24px;
 	border: 1px solid #0A3871;
@@ -167,8 +167,8 @@
     }
    
   	#logo{
-
-	  top: 44px;
+		left: 30px;
+		top: 30px;
     }
 
    	.nav {
@@ -189,7 +189,7 @@
 	  align-self: flex-start;
 	  width: 100%;
 	  font-size: 25px;
-	  margin-top: 225px;
+	  margin-top: 325px;
     }
 
     .hide > p {
@@ -244,7 +244,7 @@
 	}
 
 	#logo{
-		margin-left: 5px;
-		margin-top: 5px;
+		left: 15px;
+		top: 10px;
 	}
 }
